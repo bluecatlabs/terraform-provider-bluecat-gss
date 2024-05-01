@@ -2,7 +2,7 @@
 
 package models
 
-import "terraform-provider-bluecat/bluecat/entities"
+import "terraform-provider-bluecat-gss/bluecat/entities"
 
 // RestLogin Initialize the Rest credentials
 func RestLogin(cred entities.RestLogin) *entities.RestLogin {

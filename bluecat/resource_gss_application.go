@@ -8,7 +8,7 @@ import (
 	log "github.com/sirupsen/logrus"
 	"strconv"
 	"strings"
-	"terraform-provider-bluecat/bluecat/utils"
+	"terraform-provider-bluecat-gss/bluecat/utils"
 )
 
 // ResourceGSSApplication The GSS Application

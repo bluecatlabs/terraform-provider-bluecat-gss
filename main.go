@@ -3,7 +3,7 @@
 package main
 
 import (
-	"terraform-provider-bluecat/bluecat"
+	"terraform-provider-bluecat-gss/bluecat"
 
 	"github.com/hashicorp/terraform-plugin-sdk/plugin"
 	"github.com/hashicorp/terraform-plugin-sdk/terraform"

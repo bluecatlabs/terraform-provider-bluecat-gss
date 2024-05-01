@@ -1,4 +1,4 @@
-module terraform-provider-bluecat
+module terraform-provider-bluecat-gss
 
 go 1.14
 

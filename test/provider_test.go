@@ -1,8 +1,8 @@
 package main
 import (
 	"fmt"
-	"terraform-provider-bluecat/bluecat/logging"
-	"terraform-provider-bluecat/bluecat"
+	"terraform-provider-bluecat-gss/bluecat/logging"
+	"terraform-provider-bluecat-gss/bluecat"
 	"github.com/hashicorp/terraform-plugin-sdk/terraform"
 	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
 	"testing"

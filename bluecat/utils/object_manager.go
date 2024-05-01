@@ -5,8 +5,8 @@ package utils
 import (
 	"encoding/json"
 	"fmt"
-	"terraform-provider-bluecat/bluecat/entities"
-	"terraform-provider-bluecat/bluecat/models"
+	"terraform-provider-bluecat-gss/bluecat/entities"
+	"terraform-provider-bluecat-gss/bluecat/models"
 )
 
 // ObjectManager The BlueCat object manager

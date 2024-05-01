@@ -4,7 +4,7 @@ package bluecat
 
 import (
 	log "github.com/sirupsen/logrus"
-	"terraform-provider-bluecat/bluecat/utils"
+	"terraform-provider-bluecat-gss/bluecat/utils"
 
 	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
 )

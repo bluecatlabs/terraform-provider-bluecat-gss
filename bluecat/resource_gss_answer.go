@@ -7,7 +7,7 @@ import (
 	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
 	log "github.com/sirupsen/logrus"
 	"strconv"
-	"terraform-provider-bluecat/bluecat/utils"
+	"terraform-provider-bluecat-gss/bluecat/utils"
 )
 
 // ResourceGSSAnswer The GSS Answer

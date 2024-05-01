@@ -3,7 +3,7 @@
 package models
 
 import (
-	"terraform-provider-bluecat/bluecat/entities"
+	"terraform-provider-bluecat-gss/bluecat/entities"
 )
 
 // Application

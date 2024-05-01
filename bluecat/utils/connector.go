@@ -7,9 +7,9 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"terraform-provider-bluecat/bluecat/entities"
-	"terraform-provider-bluecat/bluecat/logging"
-	"terraform-provider-bluecat/bluecat/models"
+	"terraform-provider-bluecat-gss/bluecat/entities"
+	"terraform-provider-bluecat-gss/bluecat/logging"
+	"terraform-provider-bluecat-gss/bluecat/models"
 
 	"io/ioutil"
 	"net/http"
