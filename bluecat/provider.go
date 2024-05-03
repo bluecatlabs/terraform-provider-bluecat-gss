@@ -50,15 +50,15 @@ func Provider() *schema.Provider {
 			},
 		},
 		ResourcesMap: map[string]*schema.Resource{
-			"bluecat_gss_application":  ResourceGSSApplication(),
-			"bluecat_gss_answer":       ResourceGSSAnswer(),
-			"bluecat_gss_search_order": ResourceGSSSearchOrder(),
+			"bluecatgss_application":  ResourceGSSApplication(),
+			"bluecatgss_answer":       ResourceGSSAnswer(),
+			"bluecatgss_search_order": ResourceGSSSearchOrder(),
 		},
 		DataSourcesMap: map[string]*schema.Resource{
 			// TODO: Support read data from GSS in the future (don't need right now)
-			// 			"bluecat_gss_application":  DataSourceGSSApplication(),
-			// 			"bluecat_gss_answer":       DataSourceGSSAnswer(),
-			//			"bluecat_gss_search_order": DataSourceGSSSearchOrder(),
+			// 			"bluecatgss_application":  DataSourceGSSApplication(),
+			// 			"bluecatgss_answer":       DataSourceGSSAnswer(),
+			//			"bluecatgss_search_order": DataSourceGSSSearchOrder(),
 		},
 		ConfigureFunc: providerConfigure,
 	}

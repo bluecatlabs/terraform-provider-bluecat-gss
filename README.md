@@ -29,7 +29,7 @@ logging:
 ### Provider configuration:
 Create a file `main.tf` with the following
 ``` 
-provider "bluecat" {
+provider "bluecatgss" {
   server = "192.0.2.1"
   api_version = "1"
   transport = "https"
@@ -57,7 +57,7 @@ terraform {
   }
 }
 
-provider "bluecat" {
+provider "bluecatgss" {
   server = "192.0.2.10"
   api_version = "1"
   transport = "http"
@@ -67,7 +67,7 @@ provider "bluecat" {
 } 
 
 # search order
-resource "bluecat_gss_search_order" "my_search_order" {
+resource "bluecatgss_search_order" "my_search_order" {
   name = "my-search-order"
   nodes = [	
       {
@@ -97,7 +97,7 @@ resource "bluecat_gss_search_order" "my_search_order" {
 }
 
 # global application
-resource "bluecat_gss_application" "my_global_app" {
+resource "bluecatgss_application" "my_global_app" {
   configuration = "GSS"
   view = "GSS"
   zone = "example.com"
@@ -109,22 +109,22 @@ resource "bluecat_gss_application" "my_global_app" {
     port = "80"
   }
 
-  search_order = [bluecat_gss_search_order.my_search_order.name] # Optional
+  search_order = [bluecatgss_search_order.my_search_order.name] # Optional
 
   fallback = ["10.10.10.11", "10.10.10.12"] # May define CNAME
 }
 
 # answers
-resource "bluecat_gss_answer" "na-server" {
-  application_id = bluecat_gss_application.my_global_app.id
+resource "bluecatgss_answer" "na-server" {
+  application_id = bluecatgss_application.my_global_app.id
   addresses = [ "192.168.41.198"]
   region = "NA_Office"
   type = "ip_address"
   name = "na-01"
 }
 
-resource "bluecat_gss_answer" "us-server" {
-  application_id = bluecat_gss_application.my_global_app.id
+resource "bluecatgss_answer" "us-server" {
+  application_id = bluecatgss_application.my_global_app.id
   addresses = [ "www.google.com"]
   region = "US_Office"
   type = "fqdn"
@@ -137,7 +137,7 @@ resource "bluecat_gss_answer" "us-server" {
 
 ### Resource GSS Search Order:
 ```
-resource "bluecat_gss_search_order" "search_order" {
+resource "bluecatgss_search_order" "search_order" {
   name = "my_search_order"
   nodes = [
     {
@@ -166,7 +166,7 @@ The following arguments are supported:
 
 ### Resource GSS Application:
 ```
-resource "bluecat_gss_application" "global_application" {
+resource "bluecatgss_application" "global_application" {
   configuration = "terraform_demo"
   view = "Internal"
   zone = "example.com"
@@ -175,7 +175,7 @@ resource "bluecat_gss_application" "global_application" {
   properties = ""
   fallback = ["10.10.10.20"]
   health_check {}
-  search_order = [ bluecat_gss_search_order.search_order.name ]
+  search_order = [ bluecatgss_search_order.search_order.name ]
 }
 ```
 The following arguments are supported:
@@ -234,13 +234,13 @@ If no health_check configuration is provided, then the application is configured
 
 * ```search_order``` - (Optional) Defines the Search Order configurations to link to this application. For example:
 ```
-search_order = [bluecat_gss_search_order.search_order.name]
+search_order = [bluecatgss_search_order.search_order.name]
 ```
 
 # Resource GSS Answer:
 ```
-resource "bluecat_gss_answer" "answer_region" {
-    application_id = bluecat_gss_application.global_application.id
+resource "bluecatgss_answer" "answer_region" {
+    application_id = bluecatgss_application.global_application.id
     addresses = [ "10.10.10.10", "10.10.10.11"]
     region = "answer_region1"
     name = "demo-region"
@@ -263,7 +263,7 @@ The following arguments are supported:
 
 In case of you're using a local build of the provider, you need to prepare the directory structure to install the provider as described below. Otherwise, just run `terraform init`.
 - Create the directory to store the providers: <HOME_DIR>/providers
-- Create the provider structure for the provider under the directory at step 1: <HOSTNAME>/<NAMESPACE>/<TYPE>/<VERSION>/<PLATFORM>/<PROVIDER_BINARY>. For example: test.com/bluecatlabs/bluecat-gss/1.0.0/windows_amd64/terraform-provider-bluecat-gss.exe
+- Create the provider structure for the provider under the directory at step 1: <HOSTNAME>/<NAMESPACE>/<TYPE>/<VERSION>/<PLATFORM>/<PROVIDER_BINARY>. For example: example.com/bluecatlabs/bluecat-gss/1.0.0/windows_amd64/terraform-provider-bluecat-gss.exe
 - Add a provider block to your configuration:
     ```
     terraform {
